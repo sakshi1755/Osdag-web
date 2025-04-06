@@ -1,7 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0 auto;
 }
 
 .app {
@@ -129,7 +233,6 @@
   margin: 1rem;
   height: auto;
   width: auto;
- 
 }
 
 @media screen and (max-width: 1009px) {
@@ -157,29 +260,17 @@
 }
 
 /* Connection.jsx */
-.container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 83vw;
-  height: 90%;
-  margin: 5px auto 0;
-  word-break: break-all;
-}
-
 .bloc-tabs {
   display: flex;
   border: 1px solid rgba(0, 0, 0, 0.274);
-  
+
   padding: 10px;
-  
 }
-.bloc-tabs button{
+.bloc-tabs button {
   height: 30px;
 }
 
 .tabs {
-
   padding: 10px;
   text-align: center;
   width: 100%;
@@ -234,6 +325,8 @@
 .content-tabs {
   flex-grow: 1;
   padding: 10px;
+  width: 900px;
+  height:fit-content
 }
 
 .content {
@@ -261,7 +354,6 @@
   background-color: rgb(191 191 191 / 66%);
 }
 
-
 /* Grid */
 
 .content-tabs {
@@ -269,7 +361,6 @@
   grid-template-columns: auto auto;
   padding: 10px;
   align-content: center;
-
 }
 
 .conn-grid-item {
@@ -278,7 +369,6 @@
   padding: 20px;
   font-size: 20px;
   text-align: center;
-  
 }
 .conn-grid-item.selected {
   background-color: #91b014;
@@ -303,10 +393,6 @@
   object-fit: contain;
   padding-bottom: 2rem;
 }
-
-
-
-
 
 /* CSS */
 .start-btn {
@@ -334,7 +420,6 @@
   border: 1px solid black;
 }
 
-
 .start-btn:hover {
   background-color: whitesmoke;
 }
@@ -348,9 +433,7 @@
 
 /* Sidebar Button  */
 
-
 /* <button class="button-28" role="button">Button 28</button> */
-
 
 .sidebar-container .sidebar-item button:disabled {
   pointer-events: none;
@@ -360,7 +443,6 @@
   box-shadow: none;
   transform: translateY(0);
 }
-
 
 /* Fine Plate */
 /* 
@@ -386,22 +468,18 @@
   background-color: #91b014;
   cursor: pointer;
 } */
+/* Navigation Menu */
 .module_nav {
-  margin-top: 0.1rem;
-  padding-left: 2rem;
   display: flex;
   flex-direction: row;
   gap: 20px;
   background-color: #d2d4d2;
   width: 100%;
+  padding-left: 2rem;
+  margin-top: 0.1rem;
+  border-bottom: 1px solid #bbb;
+}
 
- 
-}
-.element
-{
-  margin-left: auto;
-  margin-right: 10vh;
-}
 .module_nav div {
   padding: 0.6rem;
 }
@@ -410,7 +488,12 @@
   background-color: #91b014;
   cursor: pointer;
 }
+.element {
+  margin-left: auto;
+  margin-right: 10vh;
+}
 
+/* Dropdown Menu */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -428,7 +511,8 @@
   border: 1px solid #ccc;
   border-top: none;
   min-width: 350px;
-  z-index: 1;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .dropdown-menu div {
@@ -439,22 +523,23 @@
   background-color: #f1f1f1;
   cursor: pointer;
 }
-.dropdown-items{
+
+.dropdown-items {
   display: flex;
   width: 100%;
   justify-content: space-between;
   font-size: small;
 }
 
-
-
 /* FinePlate Body*/
 
+/* Main Body Layout */
 .superMainBody {
   display: grid;
-  grid-template-columns: 50vh 90vh 45vh;
-  padding: 20px;
-  margin: 20px;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  gap: 15px;
+  padding: 15px;
+  height: calc(100vh - 50px);
 }
 
 /* 
@@ -471,27 +556,27 @@
 
   
 } */
+/* Input and Output Docks */
 .subMainBody {
-  padding: 1rem;
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  padding: 1rem;
   margin: 3px;
-
-
 }
-
 
 .superMainBody_left {
   display: grid;
   grid-template-columns: auto auto;
   gap: 20px;
   margin: 20px;
-
 }
 
 .superMainBody_mid {
   padding: 20px;
- 
 }
 
 .superMainBody_right {
@@ -504,7 +589,6 @@
   position: relative;
   bottom: 1;
   right: 200px;
-
 }
 
 .superMainBody_right input {
@@ -538,11 +622,43 @@
   border-bottom: 1px solid black;
 }
 
+/* Input and Output Fields */
+.input-cont {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.input-cont h5 {
+  font-weight: 400;
+  width: 150px;
+  margin-right: 10px;
+}
+
+.input-design-pref {
+  width: 200px;
+  height: 25px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.output-field {
+  width: 200px;
+  height: 25px;
+  font-size: 12px;
+  border: 1px solid #3498db;
+  border-radius: 3px;
+  background-color: #f5f5f5;
+  cursor: default;
+}
+
 .inputdock-btn {
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  padding: 10px
+  padding: 10px;
 }
 
 .outputdock-btn {
@@ -554,22 +670,23 @@
   margin-right: 20%;
 }
 
-.scroll-data {
+/* Section Headers */
+.subMainBody h3 {
+  font-size: 16px;
+  margin: 15px 0 10px 0;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+}
 
+.scroll-data {
   width: auto;
   height: 40rem;
   max-height: 43rem;
   overflow-y: auto;
 }
 
-.subMainBody h3 {
-  font-size: 16px;
-  width: 50%;
-  padding: 2px;
-}
-
 .scroll-data::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 
 .scroll-data::-webkit-scrollbar-track {
@@ -585,8 +702,7 @@
   background-color: rgb(168, 121, 121);
 }
 
-
-.btn{
+.btn {
   background-color: rgb(135, 91, 91);
   cursor: pointer;
   color: #f1f1f1;
@@ -636,112 +752,109 @@
 
 /* Pop Up Spacing - Finplate */
 .spacing-main-body {
-	display: flex;
+  display: flex;
   border: 1px solid #ccc;
 }
 
 .spacing-left-body {
   margin: 5vh;
-	display: grid;
-	grid-template-columns: repeat(2, 2fr);
-	grid-template-rows: repeat(4, 2fr);
-	justify-items: center;
-	align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(4, 2fr);
+  justify-items: center;
+  align-items: center;
 }
 
 .spacing-right-body {
-	flex-grow: 1;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin: 5vh;
 }
 
 .grid-container {
-	width: 100%;
+  width: 100%;
 }
 
 /* End */
 /* Capacity popups */
-
 
 .Capacity-sub-body-title {
   margin: 1vh;
 }
 
 .Capacity-sub-body {
-	display: flex;
+  display: flex;
   border: 1px solid #ccc;
 }
 
 .Capacity-left-body {
   margin: 5vh;
-	display: grid;
-	grid-template-columns: repeat(2, 2fr);
-	grid-template-rows: repeat(3, 2fr);
-	justify-items: center;
-	align-items: center;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: repeat(3, 2fr);
+  justify-items: center;
+  align-items: center;
 }
-
 
 .Capacity-right-body {
   flex-grow: 1;
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
   margin: 5vh;
   flex-direction: column;
 }
 
 /* end */
 
-
 /* Design pref container*/
-.design-pref-cont{
+.design-pref-cont {
   margin-top: 10px;
-  border: 1px solid #000; 
+  border: 1px solid #000;
   min-height: 600px;
   padding: 10px;
 }
 
 /* Column and Beam Section */
-.col-beam-cont{
+.col-beam-cont {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-.Connector-col-beam-cont{
+.Connector-col-beam-cont {
   display: flex;
   flex-direction: row;
   padding: 10px;
   gap: 20px;
 }
 
-.input-cont{
+.input-cont {
   display: flex;
   align-items: center;
   column-gap: 5px;
   justify-content: space-between;
 }
-.input-cont h5{
+.input-cont h5 {
   font-weight: 400;
   width: 150px;
   margin-right: 10px;
 }
-.input-design-pref{
+.input-design-pref {
   width: 200px;
   height: 25px;
   font-size: 12px;
 }
-.sub-container{
+.sub-container {
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   row-gap: 8px;
 }
-.DesignPrefFooter{
+.DesignPrefFooter {
   /* border-top: 1px solid #000; Change the color and thickness as desired */
-  margin-top: 5px; 
+  margin-top: 5px;
   display: flex;
   padding: 1rem;
   flex-direction: row;
@@ -749,7 +862,6 @@
   align-items: center;
   column-gap: 5px;
   font-size: 12px;
-  
 }
 
 .DesignPrefFooter-btn Button {
@@ -772,14 +884,14 @@
   min-width: 200px;
   font-size: 12px;
 }
-.primary-btn{
+.primary-btn {
   background-color: rgb(135, 91, 91);
   cursor: pointer;
   color: #f1f1f1;
   width: 100%;
   font-size: 12px;
 }
-.primary-btn:hover{
+.primary-btn:hover {
   background-color: rgb(168, 121, 121);
   box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
   transform: translateY(-2px);
@@ -787,9 +899,9 @@
 .subDesignPrefFooter-btn Button:hover {
   transform: translateY(-2px);
 }
-.subDesignPrefFooter{
+.subDesignPrefFooter {
   border-top: 1px solid #000; /* Change the color and thickness as desired */
-  margin-top: 5px; 
+  margin-top: 5px;
   display: flex;
   padding: 1rem;
   flex-direction: row;
@@ -797,7 +909,6 @@
   align-items: center;
   column-gap: 6rem;
   font-size: 12px;
-  
 }
 .readonly-textarea {
   border: 1px solid #ccc; /* Add a border to indicate it's a textarea */
@@ -806,7 +917,105 @@
   cursor: default; /* Set cursor to default (non-editable) */
 }
 
-#save-input-style{
-  color : #91b014;
-  font-size: '16px';
+#save-input-style {
+  color: #91b014;
+  font-size: "16px";
 }
+
+/* Connection Diagram */
+.connection-diagram {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.connection-diagram img {
+  width: 200px;
+  height: auto;
+}
+
+/* CAD Container Styles - New Addition */
+/* CAD Container */
+.cad-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: white;
+}
+
+.cad-controls {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ddd;
+}
+
+.cad-control-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.cad-control-item label {
+  font-size: 14px;
+}
+
+.cad-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.cad-coordinates {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.cad-coordinates span {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.cad-image {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+/* Buttons */
+.btn {
+  background-color: rgb(135, 91, 91);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: rgb(168, 121, 121);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Save Input Style */
+#save-input-style {
+  color: #91b014;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+/* Responsive adjustments */
+/* @media screen and (max-width: 1200px) {
+  .superMainBody {
+    grid-template-columns: 1fr 1.2fr 1fr;
+  }
+} */
+

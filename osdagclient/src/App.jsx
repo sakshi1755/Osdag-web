@@ -27,6 +27,7 @@ import jwt_decode from 'jwt-decode';
 import EndPlate from './components/shearConnection/EndPlate';
 import CleatAngle from './components/shearConnection/CleatAngle';
 import SeatedAngle from './components/shearConnection/SeatedAngle';
+import  BeamToBeamEndPlate from './components/momentConnection/Beam-to-beam-end-plate'
 
 let renderedOnce = false
 
@@ -50,6 +51,7 @@ function App() {
       <Route path="/" element={<Root loggedIn={loggedIn} />}>
         <Route path="/home" element={<Mainwindow />} />
         <Route path="/" element={<LoginPage />} />
+        <Route path="/design/connections/moment/end_plate" element={< BeamToBeamEndPlate/>} />
         <Route path='/design-type/:designType' element={<Window />} />
         {/* Wrap FinePlate with a route that checks authentication */}
         <Route
